@@ -61,17 +61,17 @@ $posts = mysqli_fetch_all($postsQuery, MYSQLI_ASSOC);
 
     <?php foreach ($posts as $post) {
         if ($post['username'] === $username) { ?>
-            <div class="container">
-                <div class="post-header">
-                    <?php echo $post['title']; ?>
-                </div>
-                <div class="post-content"><?php echo $post['content']; ?></div>
-                <div class="post-date">Date: <?php echo $post['date']; ?></div>
-                <div class="post-footer">
-                    <button class="delete-btn" name="btnDel">Delete</button>
-                    <button class="edit-btn" name="btnedit">Edit</button>
-                </div>
-            </div>
+    <div class="container">
+        <div class="post-header">
+            <?php echo $post['title']; ?>
+        </div>
+        <div class="post-content"><?php echo $post['content']; ?></div>
+        <div class="post-date">Date: <?php echo $post['date']; ?></div>
+        <div class="post-footer">
+            <button class="delete-btn" name="btnDel">Delete</button>
+            <button class="edit-btn" name="btnedit">Edit</button>
+        </div>
+    </div>
     <?php }
     } ?>
 
@@ -97,23 +97,19 @@ $posts = mysqli_fetch_all($postsQuery, MYSQLI_ASSOC);
         </div>
     </div>
 
-
-
-
-
     <script>
-        const modal = document.getElementById('modal');
-        const newPostBtn = document.getElementById('newPostBtn');
+    const modal = document.getElementById('modal');
+    const newPostBtn = document.getElementById('newPostBtn');
 
-        newPostBtn.addEventListener('click', () => {
-            modal.style.display = 'block';
-        });
+    newPostBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
 
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
     </script>
 </body>
 
